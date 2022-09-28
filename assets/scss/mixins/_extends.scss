@@ -1,0 +1,9 @@
+@use "../presets" as *;
+
+%container {
+  min-width: $ul;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: $gap;
+  padding-left: $gap;
+}

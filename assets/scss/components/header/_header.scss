@@ -1,0 +1,109 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  padding: 150px 0;
+  color: $color-light;
+  background-color: $color-primary;
+  background-image: url(../img/img-header.png);
+  background-position: 50%;
+  background-size: cover;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    margin: 0 0 69px;
+    text-align: center;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    gap: $gap;
+  }
+}
+
+.header-menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  &__container {
+    display: grid;
+    align-items: center;
+    @extend %container;
+    gap: $gap;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.header-logo {
+  letter-spacing: 6px;
+  font-size: 24px;
+
+  &__link {
+    display: block;
+    padding: 20px 20px 20px 0;
+  }
+
+  &__accent {
+    display: inline-block;
+    margin-right: 4px;
+    padding: 5px;
+    border: 3px solid #d53d27;
+  }
+}
+
+.header-navbar {
+  display: grid;
+  justify-items: end;
+
+  &__button {
+    display: none;
+  }
+
+  &__button-row {}
+
+  &__list {
+    display: grid;
+    justify-content: end;
+    width: 100%;
+    gap: $gap;
+    grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
+    @include unlist(0 (-$gap-sm) 0 0);
+  }
+
+  &__item {}
+
+  &__link {
+    display: block;
+    padding: $gap $gap-sm;
+    transition: color 0.25s;
+    letter-spacing: 2px;
+    font-size: 18px;
+
+    &:hover,
+    &::after {
+      color: $color-accent;
+    }
+  }
+}
+
+.header-overlay {
+  opacity: 0.8;
+  background-color: $color-primary;
+  @include abs-position;
+}
