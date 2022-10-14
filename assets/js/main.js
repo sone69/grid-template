@@ -1,9 +1,6 @@
-
 $(document).ready(function () {
-
-  $('.header-navbar__hamburger').on('click', function () {
-    $(this).toggleClass('active');
-    $('.header-navbar__list').toggleClass('active');
+  $('.header-navbar__button').on('click', function () {
+    $(this).toggleClass('open');
+    $('.header-navbar__list').stop(true, true).slideToggle(300);
   });
-
 });

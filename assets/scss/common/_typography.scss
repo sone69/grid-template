@@ -14,10 +14,27 @@ html {
 }
 
 h1 {
-  letter-spacing: 5px;
   font-family: $font-header;
-  font-size: 60px;
   font-weight: 300;
+
+  @include lg-min {
+    font-size: 60px;
+    letter-spacing: 4.8px;
+  }
+
+  @include lg-md {
+    font-size: 40px;
+    letter-spacing: 3.2px;
+  }
+
+  @include md {
+    font-size: 30px;
+    letter-spacing: 2.4px;
+  }
+
+  @include sm {
+    line-height: 1.2;
+  }
 }
 
 h2 {
