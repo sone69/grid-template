@@ -16,6 +16,7 @@ html {
 h1 {
   font-family: $font-header;
   font-weight: 300;
+  line-height: 1.2;
 
   @include lg-min {
     font-size: 60px;
@@ -30,10 +31,6 @@ h1 {
   @include md {
     font-size: 30px;
     letter-spacing: 2.4px;
-  }
-
-  @include sm {
-    line-height: 1.2;
   }
 }
 

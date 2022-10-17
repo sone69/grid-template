@@ -1,0 +1,132 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.skills {
+  @include sm-min {
+    padding: $gap-sm;
+  }
+
+  @include sm {
+    padding: $gap;
+  }
+
+  &__title {}
+
+  &__container {
+    display: grid;
+    margin-bottom: $gap;
+    gap: $gap-sm;
+
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+    }
+
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+    }
+
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+    }
+
+    @include sm-min {
+      gap: $gap-sm;
+    }
+
+    @include sm {
+      gap: $gap;
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+    }
+
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33333vh - 40px / 3);
+    }
+
+    @media (max-height: 690.98px) {
+      grid-auto-rows: calc(230px - 40px / 3);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include sm-min {
+      margin-bottom: $gap-lg;
+    }
+  }
+}
+
+.skill-item {
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    z-index: 1;
+    margin: 0;
+    letter-spacing: 2px;
+
+    @include lg-min {
+      font-size: 20px;
+    }
+
+    @include lg {
+      font-size: 20px;
+    }
+
+    @include md {
+      font-size: 18px;
+      letter-spacing: 1.8px;
+    }
+
+    @include abs-position;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: $gap;
+    transition: color 0.5s;
+  }
+
+  &__image {
+    transition: transform 0.5s;
+    background-color: $color-primary;
+    background-position: 50%;
+    background-size: cover;
+    @include abs-position;
+  }
+
+  &__overlay {
+    opacity: 0.8;
+    background-color: $color-primary;
+    @include abs-position;
+  }
+
+  &:hover {
+    .skill-item__overlay {
+      opacity: 0.9;
+    }
+
+    .skill-item__image {
+      transform: scale(1.2);
+    }
+
+    .skill-item__link {
+      color: $color-accent;
+    }
+  }
+}
+
+$count: 9;
+
+@for $i from 1 through $count {
+  .skill-item:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
+  }
+}
