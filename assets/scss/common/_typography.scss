@@ -36,9 +36,24 @@ h1 {
 
 h2 {
   font-family: $font-header;
+  color: $color-primary;
 }
 
 a {
   text-decoration: none;
   color: $color-light;
+}
+
+img {
+  min-width: 266.55px;
+  height: 480px;
+
+  @include md {
+    min-width: 236px;
+    height: 424.96px;
+  }
+
+  @include sm {
+    height: 480px;
+  }
 }

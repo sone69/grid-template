@@ -1,0 +1,151 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.ready {
+  background-color: $color-gray-light;
+  min-height: 652px;
+  padding-bottom: 100px;
+
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include lg {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__container {
+    @extend %container;
+    display: flex;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__content {}
+
+  &__title {
+    margin-top: 0;
+    font-weight: 700;
+
+    @include lg-min {
+      margin-bottom: 48px;
+      letter-spacing: 4px;
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    @include lg {
+      font-size: 32px;
+      letter-spacing: 3.2px;
+      line-height: 39px;
+      margin-bottom: 41px;
+    }
+
+    @include md {
+      font-size: 24px;
+      letter-spacing: 2.4px;
+      line-height: 29px;
+      margin-bottom: 36px;
+    }
+
+    @include sm {
+      text-align: center;
+      line-height: 28.5px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    letter-spacing: 0.88px;
+    line-height: 1.15;
+    color: $color-gray;
+    font-weight: 400;
+
+    @include lg-min {
+      font-size: 18px;
+      max-width: 929px;
+      margin-right: 96px;
+    }
+
+    @include lg {
+      max-width: 549px;
+      font-size: 16px;
+      margin-right: 0px;
+    }
+
+    @include md {
+      max-width: 407px;
+    }
+
+    @include sm {
+      margin-right: 0;
+      max-width: 531px;
+    }
+  }
+
+  &__text:first-of-type {
+    margin-top: -5px;
+
+    @include sm {
+      margin-top: -4.5px;
+    }
+  }
+
+  &__text:first-of-type::after {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 200px;
+    content: "";
+    background-color: #6375881a;
+
+    @include lg-min {
+      right: -50px;
+    }
+
+    @include lg {
+      right: -20px;
+    }
+
+    @include md {
+      right: -7px;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__image {
+    align-self: center;
+
+    @include lg-min {
+      padding-left: 6.3px;
+    }
+
+    @include lg {
+      padding-left: 42px;
+      margin-top: -7px;
+    }
+
+    @include md {
+      padding-left: 17px;
+      margin-top: -13px;
+    }
+
+    @include sm {
+      padding-left: 0;
+      padding-top: 20px;
+      margin-top: -16px;
+    }
+  }
+}

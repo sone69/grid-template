@@ -166,6 +166,7 @@ template {
   display: none;
 }
 
+.ready__container,
 .header-content__container,
 .header-menu__container {
   max-width: 1340px;
@@ -195,6 +196,8 @@ h1 {
 }
 
 h2 {
+  color: #2d3651;
+
   font-family: "Roboto Slab", serif;
 }
 
@@ -202,6 +205,11 @@ a {
   text-decoration: none;
 
   color: #ffffff;
+}
+
+img {
+  min-width: 266.55px;
+  height: 480px;
 }
 
 .button {
@@ -567,6 +575,50 @@ a {
   grid-area: a9;
 }
 
+.ready {
+  min-height: 652px;
+  padding-bottom: 100px;
+
+  background-color: #e5e5e5;
+}
+.ready__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ready__title {
+  margin-top: 0;
+
+  font-weight: 700;
+}
+.ready__text {
+  position: relative;
+
+  letter-spacing: 0.88px;
+
+  color: #637588;
+
+  font-weight: 400;
+  line-height: 1.15;
+}
+.ready__text:first-of-type {
+  margin-top: -5px;
+}
+.ready__text:first-of-type::after {
+  position: absolute;
+  top: 0;
+
+  width: 2px;
+  height: 200px;
+
+  content: "";
+
+  background-color: rgba(99, 117, 136, 0.1019607843);
+}
+.ready__image {
+  -ms-flex-item-align: center;
+  align-self: center;
+}
 @media (min-width: 576px) {
   .button--primary {
     width: 350px;
@@ -581,13 +633,11 @@ a {
     margin-bottom: 30px;
   }
 }
-
 @media (min-height: 691px) {
   .skills__container {
     grid-auto-rows: calc(33.33333vh - 13.3333333333px);
   }
 }
-
 @media (min-width: 768px) {
   .header-navbar__button {
     display: none;
@@ -612,7 +662,6 @@ a {
     padding: 20px 10px;
   }
 }
-
 @media (min-width: 992px) {
   h1 {
     letter-spacing: 4.8px;
@@ -633,14 +682,61 @@ a {
   .skill-item__title {
     font-size: 20px;
   }
-}
+  .ready {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .ready__title {
+    margin-bottom: 48px;
 
+    letter-spacing: 4px;
+
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .ready__text {
+    max-width: 929px;
+    margin-right: 96px;
+
+    font-size: 18px;
+  }
+  .ready__text:first-of-type::after {
+    right: -50px;
+  }
+  .ready__image {
+    padding-left: 6.3px;
+  }
+}
 @media (max-width: 991.8px) {
   .skill-item__title {
     font-size: 20px;
   }
-}
+  .ready {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .ready__title {
+    margin-bottom: 41px;
 
+    letter-spacing: 3.2px;
+
+    font-size: 32px;
+    line-height: 39px;
+  }
+  .ready__text {
+    max-width: 549px;
+    margin-right: 0;
+
+    font-size: 16px;
+  }
+  .ready__text:first-of-type::after {
+    right: -20px;
+  }
+  .ready__image {
+    margin-top: -7px;
+    padding-left: 42px;
+  }
+}
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     letter-spacing: 3.2px;
@@ -664,12 +760,15 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (max-width: 767.8px) {
   h1 {
     letter-spacing: 2.4px;
 
     font-size: 30px;
+  }
+  img {
+    min-width: 236px;
+    height: 424.96px;
   }
   .button--light {
     width: 170px;
@@ -716,22 +815,44 @@ a {
 
     font-size: 18px;
   }
-}
+  .ready {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .ready__title {
+    margin-bottom: 36px;
 
+    letter-spacing: 2.4px;
+
+    font-size: 24px;
+    line-height: 29px;
+  }
+  .ready__text {
+    max-width: 407px;
+  }
+  .ready__text:first-of-type::after {
+    right: -7px;
+  }
+  .ready__image {
+    margin-top: -13px;
+    padding-left: 17px;
+  }
+}
 @media (max-width: 767.8px) and (min-width: 576px) {
   .skills__container {
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-height: 690.98px) {
   .skills__container {
     grid-auto-rows: 216.6666666667px;
   }
 }
-
 @media (max-width: 575.8px) {
+  img {
+    height: 480px;
+  }
   .button--primary {
     width: 100%;
   }
@@ -750,5 +871,31 @@ a {
   .skills__container {
     gap: 20px;
     grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+  }
+  .ready__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .ready__title {
+    text-align: center;
+
+    line-height: 28.5px;
+  }
+  .ready__text {
+    max-width: 531px;
+    margin-right: 0;
+  }
+  .ready__text:first-of-type {
+    margin-top: -4.5px;
+  }
+  .ready__text:first-of-type::after {
+    display: none;
+  }
+  .ready__image {
+    margin-top: -16px;
+    padding-top: 20px;
+    padding-left: 0;
   }
 }
