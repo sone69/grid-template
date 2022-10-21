@@ -44,9 +44,9 @@
       &:hover,
       &:focus {
         color: $color-light;
-        border: 2px solid $color-light;
+        border: 2px solid rgba($color-light, 0.2);
         background-color: rgba($color-light, 0.15);
-        border-bottom-color: $color-light;
+        border-bottom-color: rgba($color-light, 0.7);
         transition: background-color 0.5s, border-color 0.5s;
         outline: none;
       }
