@@ -1,0 +1,111 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.posts {
+  padding: 98px 0;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    display: grid;
+    gap: $gap;
+    padding-bottom: $gap;
+    grid-template-rows: 300px, 1fr;
+
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+    }
+
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+    }
+
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+    }
+
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.posts-item {
+  background-color: rgba($color-gray-light, 0.3);
+
+  &:hover {
+    background-color: $color-gray-light;
+    transition: background-color 0.3s, transform 0.5s;
+
+    .posts-item__image img {
+      transform: scale(1.2);
+    }
+
+    .posts-item__title {
+      color: $color-gray-dark;
+    }
+
+    .posts-item__text {
+      color: $color-gray-dark;
+    }
+  }
+
+  &__link {
+    display: grid;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  &__image {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+
+  &__about {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding: $gap;
+  }
+
+  &__title {
+    font-family: $font-header;
+    color: $color-gray;
+    margin: 18px 0;
+    letter-spacing: 0.8px;
+    font-size: 18px;
+  }
+
+  &__text {
+    margin: 18px 0;
+    color: $color-gray;
+  }
+}
+
+$count: 6;
+
+@for $i from 1 through $count {
+  .posts-item:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
+  }
+}

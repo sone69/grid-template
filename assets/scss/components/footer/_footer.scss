@@ -1,0 +1,54 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.footer {
+  background-color: $color-primary;
+  padding: 50px 20px 70px;
+
+  &__container {
+    @extend %container;
+    text-align: center;
+    color: $color-light;
+  }
+
+  &__social {
+    font-family: "Font Awesome 5 Brands";
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 37.5px);
+      width: 75px;
+      height: 2px;
+      content: "";
+      background-color: rgba($color-gray, 0.2);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 7.3px 10px;
+    transition: color 0.5s;
+    font-size: 36px;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+
+    span:nth-of-type(1) {
+      margin-left: 8px;
+      font-weight: 100;
+      letter-spacing: 5.28px;
+      color: $color-gray;
+    }
+  }
+}

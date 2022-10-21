@@ -4,11 +4,10 @@
 .ready {
   background-color: $color-gray-light;
   min-height: 652px;
-  padding-bottom: 100px;
 
   @include lg-min {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 95.3px;
   }
 
   @include lg {
@@ -27,39 +26,6 @@
 
     @include sm {
       flex-direction: column;
-    }
-  }
-
-  &__content {}
-
-  &__title {
-    margin-top: 0;
-    font-weight: 700;
-
-    @include lg-min {
-      margin-bottom: 48px;
-      letter-spacing: 4px;
-      font-size: 40px;
-      line-height: 48px;
-    }
-
-    @include lg {
-      font-size: 32px;
-      letter-spacing: 3.2px;
-      line-height: 39px;
-      margin-bottom: 41px;
-    }
-
-    @include md {
-      font-size: 24px;
-      letter-spacing: 2.4px;
-      line-height: 29px;
-      margin-bottom: 36px;
-    }
-
-    @include sm {
-      text-align: center;
-      line-height: 28.5px;
     }
   }
 
