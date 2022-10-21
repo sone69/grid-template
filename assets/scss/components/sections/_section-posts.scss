@@ -77,6 +77,7 @@
     display: grid;
     overflow: hidden;
     height: 100%;
+    grid-template-rows: 300px 1fr;
   }
 
   &__image {
@@ -98,7 +99,6 @@
     align-content: center;
     text-align: center;
     padding: $gap;
-    height: 242px;
   }
 
   &__title {
@@ -110,7 +110,7 @@
   }
 
   &__text {
-    margin: 18px 0;
+    margin: 16px 0;
     color: $color-gray;
   }
 }
