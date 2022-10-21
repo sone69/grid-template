@@ -25,7 +25,6 @@
     display: grid;
     gap: $gap;
     padding-bottom: $gap;
-    grid-template-rows: repeat(300px, 1fr);
 
     @include lg-min {
       grid-template-columns: repeat(4, 1fr);
