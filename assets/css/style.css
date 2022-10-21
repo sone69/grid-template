@@ -635,16 +635,31 @@ img {
 
   width: 100%;
   height: 60px;
-  padding: 1px 30px;
+  padding: 0 30px;
 
   letter-spacing: 2.4px;
 
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
 
   font-size: 18px;
+}
+.form .form-element__input::-webkit-input-placeholder {
+  color: #637588;
+}
+.form .form-element__input::-moz-placeholder {
+  color: #637588;
+}
+.form .form-element__input:-ms-input-placeholder {
+  color: #637588;
+}
+.form .form-element__input::-ms-input-placeholder {
+  color: #637588;
+}
+.form .form-element__input::placeholder {
+  color: #637588;
 }
 .form .form-element__input:hover,
 .form .form-element__input:focus {
@@ -653,9 +668,10 @@ img {
           transition: background-color 0.5s, border-color 0.5s;
 
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-bottom-color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ffffff;
+  border-bottom-color: #ffffff;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .form .form-element .button:hover,
 .form .form-element .button:focus {
