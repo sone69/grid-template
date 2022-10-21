@@ -2,7 +2,20 @@
 @use "../../mixins" as *;
 
 .posts {
-  padding: 98px 0;
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include lg {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
   &__container {
     @extend %container;
@@ -12,7 +25,7 @@
     display: grid;
     gap: $gap;
     padding-bottom: $gap;
-    grid-template-rows: 300px, 1fr;
+    grid-template-rows: repeat(300px, 1fr);
 
     @include lg-min {
       grid-template-columns: repeat(4, 1fr);
@@ -49,7 +62,7 @@
     transition: background-color 0.3s, transform 0.5s;
 
     .posts-item__image img {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
     .posts-item__title {
@@ -86,13 +99,14 @@
     align-content: center;
     text-align: center;
     padding: $gap;
+    height: 242px;
   }
 
   &__title {
     font-family: $font-header;
     color: $color-gray;
     margin: 18px 0;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.9px;
     font-size: 18px;
   }
 
